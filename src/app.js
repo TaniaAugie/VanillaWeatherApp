@@ -43,8 +43,19 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.condition.description);
 }
 
-let apiKey = "d3b3247o775abt0c69f7b0e4513c11ea";
-let city = "Cape Town";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=d3b3247o775abt0c69f7b0e4513c11ea&units=metric`;
+function search(city) {
+  let apiKey = "d3b3247o775abt0c69f7b0e4513c11ea";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=d3b3247o775abt0c69f7b0e4513c11ea&units=metric`;
+  axios.get(apiUrl).then(displayTemperature);
+}
 
-axios.get(apiUrl).then(displayTemperature);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("Cape Town");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
