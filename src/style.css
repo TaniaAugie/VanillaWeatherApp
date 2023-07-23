@@ -52,7 +52,7 @@ li:first-letter {
   margin-left: 5px;
   height: 63px;
   width: 63px;
-  font-family: `Roboto`;
+  font-family: var(--bs-font-sans-serif);
 }
 .weather-temperature strong {
   color: black;
@@ -105,4 +105,10 @@ a:link {
 }
 footer {
   text-align: center;
+}
+.button {
+  background-color: transparent;
+  border-color: rgb(203, 158, 219);
+  border-radius: 20px;
+  box-shadow: none;
 }
