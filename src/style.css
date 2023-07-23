@@ -1,17 +1,20 @@
 body {
-  font-family: `Roboto`;
-  background: linear-gradient(
-    109.6deg,
-    rgb(220, 196, 252) 11.2%,
-    rgb(150, 199, 253) 100.2%
-  );
+  font-family: var(--bs-font-sans-serif);
+  background-image: url("img/desktop-wallpaper-pastel-ombre-group-purple-pastel-aesthetic.jpg");
 }
 
 .weather-app-wrapper {
-  max-width: 480px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 30px auto;
 }
-
+.weather-app {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: rgb(203, 158, 219);
+}
 h1 {
   color: black;
   font-size: 24px;
@@ -34,6 +37,7 @@ li {
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
+  font-family: `Roboto`;
 }
 
 li:first-letter {
@@ -48,9 +52,10 @@ li:first-letter {
   margin-left: 5px;
   height: 63px;
   width: 63px;
+  font-family: `Roboto`;
 }
 .weather-temperature strong {
-  color: gray;
+  color: black;
   font-size: 63px;
   line-height: 1;
   font-weight: 300;
@@ -59,10 +64,12 @@ li:first-letter {
   position: relative;
   font-size: 15px;
   top: 5px;
+  font-family: `Roboto`;
 }
 .weather-temperature .active {
-  color: gray;
+  color: black;
   cursor: default;
+  font-family: `Roboto`;
 }
 
 .weather-temperature .active:hover {
@@ -74,15 +81,28 @@ a:link {
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
-  color: gray;
+  color: black;
+  font-family: var(--bs-font-sans-serif);
 }
 .weather-forecast-date {
   font-size: 16px;
   opacity: 0.5;
+  font-family: var(--bs-font-sans-serif);
 }
 .weather-forecast-temperature-min {
   opacity: 0.5;
 }
 .weather-forecast-temperatures {
   font-size: 13px;
+}
+.form-control {
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  font-family: var(--bs-font-sans-serif);
+  margin: 0;
+  padding: 0;
+}
+footer {
+  text-align: center;
 }
