@@ -2,7 +2,7 @@ function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if ((hours, 10)) {
-    hours = `0${hours}`;
+    hours = `${hours}`;
   }
   let minutes = date.getMinutes();
   if (minutes < 10) {
@@ -19,6 +19,32 @@ function formatDate(timestamp) {
   ];
   let day = days[date.getDay()];
   return `${day} ${hours}:${minutes}`;
+}
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+                <div class="weather-forecast-date">${day}</div>
+                <img
+                  src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-night.png"
+                  alt=""
+                  width="40"
+                />
+                <div class="weather-forecast-temperatures">
+                  <span class="weather-forecast-temperature-max">18˚</span>
+                  <span class="weather-forecast-temperature-min">12˚</span>
+                </div>
+              </div>
+            `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function displayTemperature(response) {
@@ -82,3 +108,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Cape Town");
+displayForecast();
